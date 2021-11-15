@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Net6.Lab.Example.Model;
+using Net6.Lab.Example.Models;
 
 namespace Net6.Lab.Example.Data
 {
@@ -14,13 +14,13 @@ namespace Net6.Lab.Example.Data
         {
         }
 
-        public DbSet<Net6.Lab.Example.Model.WeatherForecast> WeatherForecast { get; set; }
+        public DbSet<Todo> Todo { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .Entity<WeatherForecast>()
-                .ToTable("WeatherForecast", b => b.IsTemporal());
+                .Entity<Todo>()
+                .ToTable("Todo", b => b.IsTemporal());
         }
 
     }

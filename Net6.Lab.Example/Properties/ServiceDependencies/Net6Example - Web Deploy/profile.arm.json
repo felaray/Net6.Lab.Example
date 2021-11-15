@@ -21,7 +21,7 @@
     },
     "resourceName": {
       "type": "string",
-      "defaultValue": "Net6LabExample",
+      "defaultValue": "Net6Example",
       "metadata": {
         "description": "Name of the main resource to be created by this template."
       }
