@@ -1,6 +1,16 @@
 using Net6.Lab.Example.Services;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Net6.Lab.Example.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<Net6LabExampleContext>(options =>
+//options.UseInMemoryDatabase("Lab")
+options.UseSqlServer(builder.Configuration.GetConnectionString("Net6LabExampleContext"))
+);
+
+
 
 // Add services to the container.
 

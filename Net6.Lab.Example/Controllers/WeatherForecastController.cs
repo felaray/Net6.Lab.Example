@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Net6.Lab.Example.Model;
 using Net6.Lab.Example.Services;
 
 namespace Net6.Lab.Example.Controllers

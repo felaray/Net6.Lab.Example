@@ -1,4 +1,6 @@
-﻿namespace Net6.Lab.Example.Services
+﻿using Net6.Lab.Example.Model;
+
+namespace Net6.Lab.Example.Services
 {
     public interface IWeatherForecastService
     {
