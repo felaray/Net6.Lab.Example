@@ -35,7 +35,18 @@ namespace Net6.Lab.Example.Controllers
                 .TemporalAll()
                 .Where(c => c.Id == id)
                 .ToListAsync();
-  
+
+            return Ok(result);
+        }
+
+        [HttpGet("{id}/{from}/{to}")]
+        public async Task<IActionResult> Get(int id, DateTime from, DateTime to)
+        {
+            var result = await _context.Todo
+                .TemporalBetween(from, to)
+                .Where(c => c.Id == id)
+                .ToListAsync();
+
             return Ok(result);
         }
 
