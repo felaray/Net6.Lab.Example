@@ -44,7 +44,14 @@ namespace Net6.Lab.Example.Controllers
         {
             var result = await _context.Todo
                 .TemporalBetween(from, to)
+                .OrderBy(todo => EF.Property<DateTime>(todo, "PeriodStart"))
                 .Where(c => c.Id == id)
+                .Select(todo => new
+                {
+                    Todo = todo,
+                    PeriodStart = EF.Property<DateTime>(todo, "PeriodStart"),
+                    PeriodEnd = EF.Property<DateTime>(todo, "PeriodEnd")
+                })
                 .ToListAsync();
 
             return Ok(result);
