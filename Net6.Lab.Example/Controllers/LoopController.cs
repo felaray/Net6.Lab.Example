@@ -8,6 +8,7 @@ namespace Net6.Lab.Example.Controllers
     [ApiController]
     public class LoopController : ControllerBase
     {
+        [HttpGet("test2")]
         public IActionResult Test()
         {
             var test = new Test();
@@ -25,6 +26,12 @@ namespace Net6.Lab.Example.Controllers
 
             return Ok();
 
+        }
+
+        [HttpGet("test1")]
+        public IActionResult CICD()
+        {
+            return Ok("CI/CD ready");
         }
     }
 }
